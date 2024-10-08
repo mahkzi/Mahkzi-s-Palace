@@ -34,6 +34,7 @@ if (zonaUsuario==0){
                 break;
                 case "Almirante Brown":
                    alert("Almirante Brown tiene los mejores Lagos")
+                   break;
                     default:
                         alert("introdujiste un valor no válido")
                         break;
@@ -51,6 +52,7 @@ if (zonaUsuario==0){
                 break;
                 case "Bella Vista":
                     alert("Bella Vista tiene la mejor seguridad")
+                    break;
                     default:
                         alert("introdujiste un valor no válido")
                         break;
@@ -68,6 +70,7 @@ if (zonaUsuario==0){
                 break;
                 case "Moreno":
                    alert("Hogar del mejor fútbol")
+                   break;
                     default:
                         alert("introdujiste un valor no válido")
                         break;
@@ -85,6 +88,7 @@ if (zonaUsuario==0){
                 break;
                 case "Montserrat":
                    alert("Montserrat tiene la mejore música en vivo")
+                   break;
                    default:
                     alert("introdujiste un valor no válido")
                     break;
