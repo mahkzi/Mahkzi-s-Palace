@@ -16,6 +16,7 @@ if (zonaUsuario==0){
                 break;
                 case "Munro":
                    alert("Munro tiene los mejores restaurantes")
+                   break;
                     default:
                         alert("introdujiste un valor no válido")
                         break;
