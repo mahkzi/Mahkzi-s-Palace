@@ -58,7 +58,7 @@ productoSillas.forEach(el=>{
    nombre.innerText=`${el.nombre}`
    precio.innerText=`${el.precio}`
    boton.innerText=`${el.carrito}`
-   boton.addEventListener("click",()=>agregarAlCarrito(productoSillas))
+   boton.addEventListener("click",()=>agregarAlCarrito())
    card.appendChild(nombre)
    card.appendChild(precio)
    card.appendChild(boton)
@@ -100,7 +100,7 @@ productoMesa.forEach(el=>{
    nombre.innerText=`${el.nombre}`
    precio.innerText=`${el.precio}`
    boton.innerText=`${el.carrito}`
-   boton.addEventListener("click",()=>agregarAlCarrito(productoMesa))
+   boton.addEventListener("click",()=>agregarAlCarrito())
    card.appendChild(nombre)
    card.appendChild(precio)
    card.appendChild(boton)
@@ -139,10 +139,13 @@ section.appendChild(subtituloSillones)
    nombre.innerText=`${el.nombre}`
    precio.innerText=`${el.precio}`
    boton.innerText=`${el.carrito}`
-   boton.addEventListener("click",()=>agregarAlCarrito(productoSillones))
+   boton.addEventListener("click",()=>agregarAlCarrito())
    card.appendChild(nombre)
    card.appendChild(precio)
    card.appendChild(boton)
    section.appendChild(card)
 })
 console.log(main);
+function agregarAlCarrito(){
+JSON.parse(localStorage.setItem)
+}
