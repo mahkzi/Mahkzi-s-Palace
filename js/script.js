@@ -1,4 +1,5 @@
 const header = document.getElementById("contenedor");
+console.log(header)
 const nodoNav =document.createElement("nav");
 nodoNav.className="navegacion";
 header.appendChild(nodoNav);
@@ -13,48 +14,135 @@ opciones.forEach(el=>{
     nodoLi.className="encabezado"
 }
 )
- console.log(header)
  //header
- const main= document.getElementById("main-container");
- main.innerHTML="<h1>Nuestros productos</h1>";
- main.className="titulo"
- 
- const section =document.getAnimations("container-cards")
- const productoSillas=[
-    {
-        nombre:"Da Vinci",
-        img:"*colocar imagen*",
-        precio:"300$",
- },
- {
-    nombre:"Angel",
-    img:"*colocar imagen*",
-    precio:"250$"
- },
- {
-    nombre:"Caravaggio",
-    img:"*colocar imagen*",
-    precio:"200$"
- },
- {
-    nombre:"Donatello",
-    img:"*colocar imagen*",
-    precio:"400$"
- }
+ //main
+ const carrito=[];
+ const main=document.getElementById("main-container")
+ const titulo=document.createElement("h1")
+ titulo.innerText="Nuestros productos"
+ main.appendChild(titulo)
+ titulo.className="titulo-principal"
+ const section=document.createElement("section")
+ section.className="container-cards"
+ main.appendChild(section)
+ const subtituloSilla=document.createElement("div")
+ subtituloSilla.className="subtitulo"
+ subtituloSilla.innerHTML="<h3>Nuestras sillas</h3>"
+ section.appendChild(subtituloSilla)
+const productoSillas=[
+   {
+      nombre:"Da Vinci",
+      precio:"$300",
+      carrito:"Agregar al carrito",
+},
+{
+   nombre:"Donatello",
+   precio:"$250",
+   carrito:"Agregar al carrito",
+},
+{
+   nombre:"Miguel Angél",
+   precio:"$200",
+   carrito:"Agregar al carrito",
+},
 ];
 productoSillas.forEach(el=>{
-    const card=document.createElement("div");
-    card.className="div-card";
-    const nombre=document.createElement("p");
+   const card=document.createElement("div")
+   card.className="card"
+   const nombre=document.createElement("p")
+   nombre.className="nombres-card"
     const precio=document.createElement("p")
-    const imagen=document.createElement("img")
-    nombre.innerText=el.nombre
-    precio.innerText=el.precio
-    imagen.innerText=el.img
-    card.appendChild(imagen)
-    card.appendChild(precio)
-    card.appendChild(nombre)
-    
-}
-)
-console.log(main)
+   precio.className="precios-card"
+   const boton=document.createElement("button")
+   boton.className="boton-card"
+   nombre.innerText=`${el.nombre}`
+   precio.innerText=`${el.precio}`
+   boton.innerText=`${el.carrito}`
+   boton.addEventListener("click",()=>agregarAlCarrito(productoSillas))
+   card.appendChild(nombre)
+   card.appendChild(precio)
+   card.appendChild(boton)
+   section.appendChild(card)
+   function agregarAlCarrito(){
+      
+   }
+})
+const subtituloMesa=document.createElement("div")
+subtituloMesa.className="subtitulo"
+subtituloMesa.innerHTML="<h3>Nuestras mesas</h3>"
+section.appendChild(subtituloMesa)
+const productoMesa=[
+   {
+      nombre:"Sanzio",
+      precio:"$600",
+      carrito:"Agregar al carrito",
+},
+{
+   nombre:"Botticelli",
+   precio:"$650",
+   carrito:"Agregar al carrito",
+},
+{
+   nombre:"Caravaggio",
+   precio:"$700",
+   carrito:"Agregar al carrito",
+},
+];
+productoMesa.forEach(el=>{
+   const card=document.createElement("div")
+   card.className="card"
+   const nombre=document.createElement("p")
+   nombre.className="nombres-card"
+    const precio=document.createElement("p")
+   precio.className="precios-card"
+   const boton=document.createElement("button")
+   boton.className="boton-card"
+   nombre.innerText=`${el.nombre}`
+   precio.innerText=`${el.precio}`
+   boton.innerText=`${el.carrito}`
+   boton.addEventListener("click",()=>agregarAlCarrito(productoMesa))
+   card.appendChild(nombre)
+   card.appendChild(precio)
+   card.appendChild(boton)
+   section.appendChild(card)
+})
+const subtituloSillones=document.createElement("div")
+subtituloSillones.className="subtitulo"
+subtituloSillones.innerHTML="<h3>Nuestros sillones</h3>"
+section.appendChild(subtituloSillones)
+ const productoSillones=[
+   {
+      nombre:"Giotto",
+      precio:"$600",
+      carrito:"Agregar al carrito",
+},
+{
+   nombre:"Vecellio",
+   precio:"$650",
+   carrito:"Agregar al carrito",
+},
+{
+   nombre:"Angélico",
+   precio:"$700",
+   carrito:"Agregar al carrito",
+},
+ ];
+ productoSillones.forEach(el=>{
+   const card=document.createElement("div")
+   card.className="card"
+   const nombre=document.createElement("p")
+   nombre.className="nombres-card"
+    const precio=document.createElement("p")
+   precio.className="precios-card"
+   const boton=document.createElement("button")
+   boton.className="boton-card"
+   nombre.innerText=`${el.nombre}`
+   precio.innerText=`${el.precio}`
+   boton.innerText=`${el.carrito}`
+   boton.addEventListener("click",()=>agregarAlCarrito(productoSillones))
+   card.appendChild(nombre)
+   card.appendChild(precio)
+   card.appendChild(boton)
+   section.appendChild(card)
+})
+console.log(main);
