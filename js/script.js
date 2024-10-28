@@ -16,7 +16,8 @@ opciones.forEach(el=>{
 )
  //header
  //main
- const carrito=[];
+ const carrito={}
+ const enJson=JSON.stringify(carrito)
  const main=document.getElementById("main-container")
  const titulo=document.createElement("h1")
  titulo.innerText="Nuestros productos"
@@ -58,14 +59,17 @@ productoSillas.forEach(el=>{
    nombre.innerText=`${el.nombre}`
    precio.innerText=`${el.precio}`
    boton.innerText=`${el.carrito}`
-   boton.addEventListener("click",()=>agregarAlCarrito())
+   boton.addEventListener("click",()=>agregarAlCarrito(el))
    card.appendChild(nombre)
    card.appendChild(precio)
    card.appendChild(boton)
    section.appendChild(card)
    function agregarAlCarrito(){
-      
-   }
+      const guardarLocal=(producto, array)=>{
+         localStorage.setItem(producto,array)
+      };
+      guardarLocal("listaProductos", JSON.stringify(productoSillas))
+    }
 })
 const subtituloMesa=document.createElement("div")
 subtituloMesa.className="subtitulo"
@@ -100,11 +104,17 @@ productoMesa.forEach(el=>{
    nombre.innerText=`${el.nombre}`
    precio.innerText=`${el.precio}`
    boton.innerText=`${el.carrito}`
-   boton.addEventListener("click",()=>agregarAlCarrito())
+   boton.addEventListener("click",()=>agregarAlCarrito(el))
    card.appendChild(nombre)
    card.appendChild(precio)
    card.appendChild(boton)
    section.appendChild(card)
+   function agregarAlCarrito(){
+      const guardarLocal=(producto, array)=>{
+         localStorage.setItem(producto,array)
+      };
+      guardarLocal("listaProductos", JSON.stringify(productoMesa))
+    }
 })
 const subtituloSillones=document.createElement("div")
 subtituloSillones.className="subtitulo"
@@ -144,8 +154,14 @@ section.appendChild(subtituloSillones)
    card.appendChild(precio)
    card.appendChild(boton)
    section.appendChild(card)
+      function agregarAlCarrito(){
+         const guardarLocal=(producto, array)=>{
+            localStorage.setItem(producto,array)
+         };
+         guardarLocal("listaProductos", JSON.stringify(productoSillones))
+       }
+  
 })
 console.log(main);
-function agregarAlCarrito(){
-JSON.parse(localStorage.setItem)
-}
+const guardados=JSON.parse(localStorage.getItem("listaProductos"))
+const producto=[]
