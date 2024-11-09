@@ -1,65 +1,7 @@
-*{
-    box-sizing: border-box;
+*{  padding: 0;
     margin: 0;
-    padding: 0;
+    box-sizing: border-box;
+};
+body{
+    background-color: aquamarine;
 }
-.navegacion{
-    border-bottom: 1px solid grey;
-}
-.lista{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.encabezado{
-    list-style-type: none;
-    margin: 15px;
-    font-size: 1.8rem;
-    font-family: Arial, Helvetica, sans-serif;
-}
-/*main*/
-.titulo-principal{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    margin-top: 10px;
-    padding: 5px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2rem;
-}
-.container-cards{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.subtitulo{
-font-size: 1.5rem;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-display: inline;
-margin: 15px;
-}
-.card{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    align-items: center;
-    justify-content: center;
-    }
-    .nombres-card{
-        font-size: 1rem;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .precios-card{
-        font-size: 1rem;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .boton-card{
-        font-size: 0.8rem;
-        margin-top: 5px;
-        transition: 1s;
-    }
-    .boton-card:hover{
-border-radius: 2px;
-font-size: 1rem;
-    }
