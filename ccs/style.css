@@ -5,7 +5,6 @@
 .navegador{
     display: flex;
     justify-content: center;
-    margin: 10px;
     border-bottom: 2px solid grey;
 }
 .contenedor-li{
@@ -32,4 +31,37 @@
 }
 .contenedor-icono{
     margin-left: 230px;
+}
+.titulo-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.contenedor-cartitas{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    row-gap: 10px;
+    margin-top: 10px;
+}
+.cartita{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.texto-cartita{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    padding: 3px;
+}
+.imagen-cartita{
+    width: 30px;
+    height: 50px;
 }

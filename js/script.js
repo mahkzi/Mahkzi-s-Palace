@@ -33,3 +33,43 @@ imagen.alt="icono del carrito";
 imagen.className="img";
 icono.appendChild(imagen);
 console.log(header);
+// header index
+const carrito =[];
+const container=document.getElementById("main-container");
+const titulo=document.createElement("h1");
+titulo.className="titulo-principal";
+titulo.innerText="Nuestros Productos";
+container.appendChild(titulo);
+const containerCards=document.createElement("section");
+containerCards.className="contenedor-cartitas";
+container.appendChild(containerCards);
+
+function cardCreator(producto){
+const carta=document.createElement("div");
+carta.className="cartita"
+const imagen=document.createElement("img");
+imagen.src=`${producto.imagen}`;
+imagen.alt="carga fallida";
+imagen.className="imagen-cartita";
+const nombre=document.createElement("p");
+nombre.className="texto-cartita";
+nombre.innerText=`${producto.nombre}`;
+const precio=document.createElement("p");
+precio.className="texto-cartita";
+precio.innerText=`${producto.precio} $`;
+const boton =document.createElement("button");
+boton.innerText="Comprar";
+boton.className="boton-cartita";
+//agregar la funcion para agregar al carrito
+carta.appendChild(imagen);
+carta.appendChild(nombre);
+carta.appendChild(precio);
+carta.appendChild(boton);
+containerCards.appendChild(carta);
+};
+fetch("./json/data.json")
+.then(response=>response.json())
+.then(data=>{
+    data.forEach(el=>cardCreator(el));
+})
+.catch(error=>console.error(error));
