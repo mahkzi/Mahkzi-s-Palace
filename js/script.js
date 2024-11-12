@@ -34,7 +34,17 @@ imagen.className="img";
 icono.appendChild(imagen);
 console.log(header);
 // header index
-const carrito =[];
+let carrito;
+if (localStorage.getItem("carrito")){
+    carrito=JSON.parse(localStorage.getItem("carrito"));
+}else{
+    carrito=[]
+}
+function agregarAlCarrito(){
+    const producto=fetch("./json/data.json")
+    carrito.push(producto.precio);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
 const container=document.getElementById("main-container");
 const titulo=document.createElement("h1");
 titulo.className="titulo-principal";
@@ -60,6 +70,7 @@ precio.innerText=`${producto.precio} $`;
 const boton =document.createElement("button");
 boton.innerText="Comprar";
 boton.className="boton-cartita";
+boton.addEventListener("click",()=> agregarAlCarrito());
 //agregar la funcion para agregar al carrito
 carta.appendChild(imagen);
 carta.appendChild(nombre);
