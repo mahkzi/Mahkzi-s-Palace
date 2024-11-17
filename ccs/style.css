@@ -32,6 +32,9 @@
 .contenedor-icono{
     margin-left: 230px;
 }
+.img:hover{
+    cursor: pointer;
+}
 .titulo-principal{
     display: flex;
     justify-content: center;
@@ -66,6 +69,19 @@
     width: 350px;
     height: 420px;
 }
+.boton-cartita{
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    box-shadow: 1px 1px grey;
+    transition: 1s;
+}
+.boton-cartita:hover{
+    font-size: 1.1rem;
+    background-color: bisque;
+    cursor: pointer;
+}
 /*footer*/
 .contenedor-footer{
   display: flex;
@@ -85,4 +101,65 @@
 }
 .imagen-footer{
     margin: 10px;
+}
+/*Nosotros-estilos*/
+#contenedor-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid grey;
+}
+.nav-bar{
+    margin: 10px;
+}
+.link{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+    transition: 1s;
+
+}
+.link:hover{
+    font-size: 1.7rem;
+    text-decoration: underline;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#contenedor-section{
+    margin-top: 250px;
+    margin-bottom: 290px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1,1fr);
+}
+.info{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.texto{
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.form-contenedor{
+    display: flex;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    margin: 7px;
+    padding: 3px;
+}
+input{
+    margin: 7px;
+    padding: 3px;
+}
+#boton-formulario{
+    margin: 10px;
+    padding: 7px;
+    border-radius: 0.5rem;
 }

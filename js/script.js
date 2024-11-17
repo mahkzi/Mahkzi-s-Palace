@@ -60,7 +60,7 @@ precio.innerText=`${producto.precio} $`;
 const boton =document.createElement("button");
 boton.innerText="Comprar";
 boton.className="boton-cartita";
-boton.addEventListener("click",()=> agregarAlCarrito());
+boton.addEventListener("click",()=> agregarAlCarrito(producto));
 //agregar la funcion para agregar al carrito
 carta.appendChild(imagen);
 carta.appendChild(nombre);
@@ -80,9 +80,8 @@ if (localStorage.getItem("carrito")){
 }else{
     carrito=[]
 }
-function agregarAlCarrito(){
-    const producto=fetch("./json/data.json")
-    carrito.push(producto.precio);
+function agregarAlCarrito(producto){
+    carrito.push(producto);
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 //footer
