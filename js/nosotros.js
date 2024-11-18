@@ -28,6 +28,12 @@ textoSection.appendChild(texto);
 const formulario=document.getElementById("formulario");
 formulario.className="form";
 formularioContenedor.appendChild(formulario);
+const boton=document.createElement("button");
+boton.className="boton-enviar";
+boton.innerText="Envíar";
+boton.type="submit";
+boton.addEventListener("click",()=> enviarDatos());
+formulario.appendChild(boton);
 console.log(section);
 /*footer*/
 const footer=document.getElementById("footer-container");
@@ -55,3 +61,12 @@ contenedorTexto.appendChild(textoFooter);
 containerImg.appendChild(imagenIg);
 containerImg.appendChild(imagenFacebook);
 console.log(footer); 
+function enviarDatos(){
+    Swal.fire({
+        title: "!Muchas Gracias!",
+        text: "Su mensaje se ha enviado correctamente",
+        icon: "success",
+        confirmButtonText: "!Perfecto!",
+        background:"smokewhite"
+      });
+    }

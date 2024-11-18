@@ -1,3 +1,4 @@
+const body=document.getElementById("gran-contenedor");
 const header = document.getElementById("contenedor");
 const nav = document.createElement("nav");
 nav.className= "navegador";
@@ -31,8 +32,38 @@ const imagen=document.createElement("img");
 imagen.src="./assets/icons8-carrito-de-compras-50.png";
 imagen.alt="icono del carrito";
 imagen.className="img";
+imagen.addEventListener("click",()=>mostrarCarrito());
 icono.appendChild(imagen);
 console.log(header);
+function mostrarCarrito(){
+  const carritoDiv=document.createElement("div");
+  carritoDiv.className="container-carrito";
+  const divProductos=document.createElement("div");
+  divProductos.className="productos";
+
+  carritoDiv.appendChild(divProductos);
+  const divTotal=document.createElement("div")
+  divTotal.className="suma-total";
+  divTotal.innerText="Hola soy una prueba";
+  carritoDiv.appendChild(divTotal);
+  const botonDenegar=document.createElement("button");
+  const botonConfirmar=document.createElement("button");
+  botonDenegar.className="denegar";
+  botonConfirmar.className="confirmar";
+  carritoDiv.appendChild(botonDenegar);
+  carritoDiv.appendChild(botonConfirmar);
+  header.appendChild(carritoDiv);
+}
+function verCarrito() {
+
+    if (carrito.length === 0) {
+    } else {
+        mensaje = "";
+        carrito.forEach(el=>{
+            mensaje += carrito[el].id + ". " + carrito[el].nombre + " ($" + carrito[el].precio + ") - Cantidad: " + carrito[el].cantidad + "\n";
+        });
+        }
+}
 // header index
 
 const container=document.getElementById("main-container");
@@ -81,7 +112,18 @@ if (localStorage.getItem("carrito")){
     carrito=[]
 }
 function agregarAlCarrito(producto){
-    carrito.push(producto);
+    if (carrito.some(el => el.id === producto)) {
+        const indiceProducto = carrito.findIndex(el => el.id === producto);
+        carrito[indiceProducto].cantidad += 1;
+    }else{
+        const nuevoProducto = {
+            id: producto.id,
+            nombre: producto.nombre,
+            precio: producto.precio,
+            cantidad: 1,
+        };
+        carrito.push(nuevoProducto);
+        }
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 //footer
