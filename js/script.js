@@ -115,6 +115,13 @@ function agregarAlCarrito(producto){
     if (carrito.some(el => el.id === producto)) {
         const indiceProducto = carrito.findIndex(el => el.id === producto);
         carrito[indiceProducto].cantidad += 1;
+        Toastify({
+
+            text: "Su producto se agregó correctamente al carrito",
+            backgroundColor:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(112,13,233,1) 37%, rgba(0,212,255,1) 100%)",
+            duration: 3000
+            
+            }).showToast();
     }else{
         const nuevoProducto = {
             id: producto.id,
@@ -123,6 +130,13 @@ function agregarAlCarrito(producto){
             cantidad: 1,
         };
         carrito.push(nuevoProducto);
+        Toastify({
+
+            text: "Su producto se agregó correctamente al carrito",
+            backgroundColor:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(112,13,233,1) 37%, rgba(0,212,255,1) 100%)",
+            duration: 3000
+            
+            }).showToast();
         }
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };
