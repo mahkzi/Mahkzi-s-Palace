@@ -107,31 +107,21 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 .imagen-footer{
-    margin: 10px;
+    margin: 5px;
 }
 /*Nosotros-estilos*/
-#contenedor-header{
+/*header*/
+.nav-bar{
     display: flex;
     justify-content: center;
-    align-items: center;
     border-bottom: 2px solid grey;
+};
+.lista-desordenada{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
 }
-.nav-bar{
-    margin: 10px;
-}
-.link{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-    color: black;
-    font-size: 1.4rem;
-    transition: 1s;
-
-}
-.link:hover{
-    font-size: 1.7rem;
-    text-decoration: underline;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}
+/*main*/
 #contenedor-section{
     margin-top: 250px;
     margin-bottom: 290px;
