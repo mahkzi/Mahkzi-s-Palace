@@ -148,6 +148,9 @@ function agregarAlCarrito(producto) {
             duration: 3000
 
         }).showToast();
+        setTimeout(() => {
+            location.reload()
+        }, 3500);
     } else {
         const nuevoProducto = {
             id: producto.id,
@@ -163,6 +166,9 @@ function agregarAlCarrito(producto) {
             duration: 3000
 
         }).showToast();
+        setTimeout(() => {
+            location.reload()
+        }, 3500);
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
 };

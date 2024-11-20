@@ -120,6 +120,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: fit-content;
 }
 
 .productos-carrito {
