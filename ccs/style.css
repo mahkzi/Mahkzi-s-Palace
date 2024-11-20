@@ -121,6 +121,11 @@
     flex-direction: row;
     margin: 5px;
 }
+.container-carrito{
+    top: 0;
+    right: 0;
+    background-color: blue;
+}
 /*main*/
 #contenedor-section{
     margin-top: 250px;
